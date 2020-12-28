@@ -13,10 +13,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/GalaxyM21-Development/platform_manifest_twrp_omni
-  DEVICE: m21
-  DT_LINK: https://github.com/GalaxyM21-Development/android_device_samsung_m21-TWRP
-  DT_PATH: device/samsung/m21
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  DEVICE: CPH1861
+  DT_LINK: https://github.com/CPH1859/android_device_CPH1861_TWRP
+  DT_PATH: device/oppo/CPH1861
   TARGET: recoveryimage
   TZ: Asia/Kolkata
 
@@ -47,7 +47,7 @@ jobs:
          run: |
              mkdir work
              cd work
-             repo init -u $MANIFEST -b twrp-10.0 --depth=1
+             repo init -u $MANIFEST --depth=1
              repo sync -c -j4 --force-sync --no-clone-bundle --no-tags
              git clone $DT_LINK --depth=1 --single-branch $DT_PATH
              
@@ -61,7 +61,8 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
-          tag_name: 3.4.0
+          tag_name: v0.1
+          name: F2FS test
           files: | 
-            work/out/target/product/m21/recovery.img
+            work/out/target/product/CPH1861/recovery.img
             
