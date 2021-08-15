@@ -13,10 +13,10 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni
+  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni/tree/v3_10.0 -b v3_10.0
   DEVICE: E6746
   DT_LINK: https://github.com/mastersenpai05/twrp_micromax_e6746 -b shrp-10.0
-  DT_PATH: device/micromax/$DEVICE
+  DT_PATH: device/micromax/E6746
   TARGET: recoveryimage
   TZ: Asia/manila
 
