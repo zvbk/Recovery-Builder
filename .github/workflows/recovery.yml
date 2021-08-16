@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/SHRP/platform_manifest_twrp_omni -b v3_10.0
-  DEVICE: E6746
-  DT_LINK: https://github.com/mastersenpai05/twrp_micromax_e6746 -b shrp-10.0
-  DT_PATH: device/micromax/E6746
-  TARGET: recoveryimage
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
+  DEVICE: ares
+  DT_LINK: https://github.com/mastersenpai05/test_device_xiaomi_ares
+  DT_PATH: device/xiaomi/ares
+  TARGET: bootimage
   TZ: Asia/manila
 
 jobs:
@@ -61,8 +61,8 @@ jobs:
          env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
-          tag_name: shrp_10.0
-          name: UNOFFICIAL SHRP_10.0
+          tag_name: TWRP_11.0
+          name: UNOFFICIAL TWRP_11
           files: | 
-            work/out/target/product/E6746/recovery.img
+            work/out/target/product/ares/boot.img
             
