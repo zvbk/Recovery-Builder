@@ -65,4 +65,11 @@ jobs:
           name: UNOFFICIAL TWRP_11
           files: | 
             work/out/target/product/ares/boot.img
-            
+
+       - name: Notify me
+          uses: mastersenpai05/notify-telegram@master
+          if: always()
+          with:
+            chat: ${{ secrets.chat }}
+            token: ${{ secrets.token }}
+            status: ${{ job.status }}     
