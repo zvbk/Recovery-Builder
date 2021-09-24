@@ -64,12 +64,4 @@ jobs:
           tag_name: TWRP_10.0
           name: UNOFFICIAL TENCO KD7 TWRP_10.0
           files: | 
-            work/out/target/product/ares/recovery.img
-
-       - name: Notify me
-          uses: mastersenpai05/notify-telegram@master
-          if: always()
-          with:
-            chat: ${{ secrets.chat }}
-            token: ${{ secrets.token }}
-            status: ${{ job.status }}     
+            work/out/target/product/KD7/recovery.img
