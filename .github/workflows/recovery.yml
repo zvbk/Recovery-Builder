@@ -13,11 +13,11 @@ on:
   workflow_dispatch:
 
 env:
-  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp
-  DEVICE: aresin
-  DT_LINK: https://github.com/mastersenpai0405/twrp_device_poco_F3_GT
-  DT_PATH: device/poco/aresin
-  TARGET: bootimage
+  MANIFEST: https://github.com/minimal-manifest-twrp/platform_manifest_twrp_omni -b twrp-10.0-deprecated
+  DEVICE: KD7
+  DT_LINK: https://github.com/mastersenpai0405/recovery_device_tecno_KD7
+  DT_PATH: device/tecno/KD7
+  TARGET: recoveryimage
   TZ: Asia/manila
 
 jobs:
@@ -63,6 +63,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
          with:
           tag_name: TWRP_10.0
-          name: TEST TWRP-ARESIN
+          name: TWRP-KD7
           files: | 
-            work/out/target/product/aresin/boot.img
+            work/out/target/product/KD7/recovery.img
